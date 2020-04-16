@@ -10,7 +10,10 @@
   "author": "",
   "license": "MIT",
   "bin": {
-    "pdep": "./index.js"
+    "pdep": "./index.js",
+    "pdep-branches": "./checkRepoBranches.js",
+    "pdep-clone": "./cloneRepos.js",
+    "pdep-deploy": "./deployRepos.js"
   },
   "dependencies": {
     "@octokit/rest": "^17.1.4",
