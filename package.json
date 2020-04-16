@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Point Blue Conservation Science",
   "license": "MIT",
   "bin": {
     "pdep": "./index.js",

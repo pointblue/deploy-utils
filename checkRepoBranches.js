@@ -14,7 +14,7 @@ let git_command = 'git rev-parse --abbrev-ref HEAD';
 let repos = readReposFromJson();
 
 for(let i=0;i<repos.length;i++){
-    let command = `cd ${repo_base_dir} && ${git_command}`;
+    let command = `cd ${repo_base_dir}/${repos[i].name} && ${git_command}`;
     let commandOutput = execSync(command).toString();
     console.log(`${repos[i].name}: ` + commandOutput );
 }
