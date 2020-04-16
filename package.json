@@ -1,0 +1,20 @@
+{
+  "name": "deploy-scripts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bin": {
+    "pdep": "./index.js"
+  },
+  "dependencies": {
+    "@octokit/rest": "^17.1.4",
+    "child_process": "^1.0.2",
+    "dotenv": "^8.2.0"
+  }
+}
