@@ -42,9 +42,7 @@ deployRepos(reposToDeploy, repo_base_dir);
 
 function deployRepos(repos, reposBaseDir, isAsync = true){
     for(let repo of repos){
-        if (repo.name === 'science-projectmanager' || repo_order.includes(repo.name)){
-            deployRepo(repo, reposBaseDir, isAsync);
-        }
+        deployRepo(repo, reposBaseDir, isAsync);
     }
 
 }
