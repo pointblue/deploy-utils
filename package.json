@@ -2,7 +2,7 @@
   "name": "@point-blue/deploy-utils",
   "version": "1.0.2",
   "description": "",
-  "main": "fetchRepoMetadata.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +10,12 @@
   "author": "Point Blue Conservation Science",
   "license": "MIT",
   "bin": {
-    "pdep": "./fetchRepoMetadata.js",
-    "pdep-branches": "./checkRepoBranches.js",
-    "pdep-clone": "./cloneRepos.js",
-    "pdep-deploy": "./deployRepos.js"
+    "pdep": "./pdep-cli.js"
   },
   "dependencies": {
     "@octokit/rest": "^17.1.4",
     "child_process": "^1.0.2",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "yargs": "^15.4.1"
   }
 }
