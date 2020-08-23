@@ -8,5 +8,6 @@
 let pdep = {};
 
 pdep.RepoList = require('./src/RepoList.js');
+pdep.DeployTask = require('./src/DeployTask.js');
 
 module.exports = pdep;

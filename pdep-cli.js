@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 let {RepoList} = require('.');
+let {DeployTask} = require('.');
 
 //configure the command line
 let _argv = require('yargs').scriptName("pdep")
@@ -23,6 +24,19 @@ let _argv = require('yargs').scriptName("pdep")
         alias:'alias',
         requiresArg: true,
         describe: 'an arbitrary alias to identify this update by name and save it separately from the default list',
+        type: 'string'
+    })
+    .command('task [task_name]', 'a deployer task to run', function(yargs){
+        yargs.positional('task_name', {
+            type: 'string',
+            describe: 'the name of the deployer task that will be run'
+        })
+            .demandOption('task_name')
+    }, commandTask)
+    .option('a', {
+        alias:'alias',
+        requiresArg: true,
+        describe: 'alias of the list of repos to run the task on. alias is made with list-update command',
         type: 'string'
     })
     .example('$0 list --help', 'list - help using the `list` command')
@@ -61,4 +75,15 @@ function commandListUpdate(argv){
         if(alias.length > 0) aliasMessage = ` (using alias ${alias})`;
         console.log('Inventory updated with a total of ' + results.recordsFetched + ` repos${aliasMessage}.`);
     });
+}
+
+function commandTask(argv){
+
+    let taskName = argv['task_name'];
+
+    let alias = argv['alias'] ? argv['alias'] : '';
+
+    DeployTask.runOnRepos(taskName, alias);
+
+
 }
